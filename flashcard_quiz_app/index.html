@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>⚡ Flashcard Quiz</h1>
+            <nav class="tabs">
+                <button id="tab-quiz" class="tab-btn active">Quiz Mode</button>
+                <button id="tab-manage" class="tab-btn">Manage Cards</button>
+            </nav>
+        </header>
+
+        <main id="quiz-section" class="section active-section">
+            <div id="flashcard" class="flashcard">
+                <div class="card-inner">
+                    <h2 id="question-text">Question loading...</h2>
+                    <div id="options-grid" class="options-grid">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="btn-prev" class="control-btn">Previous</button>
+                <span id="card-counter">1 / 1</span>
+                <button id="btn-next" class="control-btn">Next</button>
+            </div>
+        </main>
+
+        <main id="manage-section" class="section hidden">
+            <div class="card-form-container">
+                <h2>Add a New Flashcard</h2>
+                <form id="add-card-form">
+                    <div class="input-group">
+                        <label for="new-question">Question:</label>
+                        <input type="text" id="new-question" placeholder="e.g., What does HTML stand for?" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Answers (Provide 4 options):</label>
+                        <input type="text" id="opt-0" placeholder="Option 1" required>
+                        <input type="text" id="opt-1" placeholder="Option 2" required>
+                        <input type="text" id="opt-2" placeholder="Option 3" required>
+                        <input type="text" id="opt-3" placeholder="Option 4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="correct-select">Which option is correct?</label>
+                        <select id="correct-select">
+                            <option value="0">Option 1</option>
+                            <option value="1">Option 2</option>
+                            <option value="2">Option 3</option>
+                            <option value="3">Option 4</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Add Flashcard</button>
+                </form>
+            </div>
+
+            <div class="card-list-container">
+                <h2>Your Flashcards</h2>
+                <ul id="flashcard-list" class="flashcard-list">
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
